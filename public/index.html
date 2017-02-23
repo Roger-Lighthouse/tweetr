@@ -7,27 +7,77 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+ <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <span class="button"><button>Compose</button></span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+     <section class="new-tweet">
+       <h2>Compose Tweet</h2>
+       <form method='POST' action="/tweets/" id='ind-tweet'>
+         <textarea name="text" placeholder="What are you humming about?"></textarea>
+         <input type="submit" value="Tweet">
+         <span class="counter">140</span>
+       </form>
+     </section>
+     <section class="tweets">
+     <!--
+       <article class='user-tweet'>
+        <header class='header'>
+          <img class="pic" src="https://www.nsb.com/wp-content/uploads/2013/07/Wendel-Clark-HiRes1-1100x400.jpg" ></img>
+          <span class='name'>Wendel Clark</span>
+          <span class='handle'>@leafs</span>
+        </header>
+          <p class='tweet'>This is my tweet</p>
+        <footer class='footer'>
+            <span>10 days ago</span>
+            <span class='icon'>
+              <i class="material-icons">favorite</i>
+              <i class="material-icons">schedule</i>
+              <i class="material-icons">stars</i>
+         </span>
+        </footer>
+      </article>
+      -->
+
+     </section>
     </main>
+
+
 
   </body>
 </html>
