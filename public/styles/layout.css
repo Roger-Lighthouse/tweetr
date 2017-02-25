@@ -14,6 +14,8 @@ html {
  * Global layout stuff
  */
 
+
+
 body {
   margin: 0;
   color: #244751;
@@ -25,10 +27,39 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+.login {
+  height: 200px;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  background-color: white;
+  border: 3px solid green;
+  margin-top: 30px;
+}
+
+
 .container {
   height: auto;
   margin: auto;
-  width: 70%;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  background-color: white;
+  border: 3px solid green;
+  margin-top: 30px;
+  display: none;
+}
+
+#navbar span{
+  float: right;
+}
+
+@media (max-width: 25%){
+.container {
+  height: auto;
+  margin: auto;
+  width: 25%;
   border: 3px solid green;
   padding: 10px;
   background-color: white;
@@ -37,6 +68,4 @@ body {
 
 }
 
-#navbar span{
-  float: right;
 }

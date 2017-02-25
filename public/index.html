@@ -41,8 +41,25 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <button><span class="button">Compose</span></button>
+<!--
+      <button><span class="button"><i class="material-icons">brush</i>
+          Compose</span></button>
+-->
+
+      <span class="button"><button><i class="material-icons">brush</i>
+          Compose</button></span>
+
     </nav>
+
+    <main class="login">
+      <form method='POST' action='/tweets/login' id='login1'>
+        <input id='login-name' type='text' name='user'></input>
+        <input type='password' name='password'></input>
+        <input type='submit' value='Log In'>
+      </form><br/>
+      <a href="/register">Register as a New User</a>
+    </main>
+
 
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -76,7 +93,6 @@
 
      </section>
     </main>
-
 
 
   </body>

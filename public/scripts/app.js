@@ -106,6 +106,7 @@ function timeDifference(current, previous) {
 //######################################
 
 function renderTweets(tweets) {
+    $('.tweets').empty();
   // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
@@ -117,18 +118,36 @@ function renderTweets(tweets) {
 }
 
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
+//this works
+//   <p class='tweet'>${tweet.content.text}</p>
+//
+//New        <p class='tweet'>$(".tweet").text(${tweet.content.text})</p>
 
 
   function createTweetElement(tweet){
     let timeStamp = timeDifference(Date.now(), tweet.created_at)
     var output = "";
+
+    //var tweet1 = $(".tweet").text(${tweet.content.text});
+    var tweet1=escape(tweet.content.text);
+
+
     output = `<article class='user-tweet'>
         <header class='header'>
           <img class='pic' src=${tweet.user.avatars.small}></img>
           <span class='name'>${tweet.user.name}</span>
           <span class='handle'>${tweet.user.handle}</span>
         </header>
-          <p class='tweet'>${tweet.content.text}</p>
+        <p class='tweet'>${tweet1}</p>
+
+
         <footer class='footer'>
             <span>${timeStamp}</span>
             <span class='icon'>
@@ -147,7 +166,6 @@ function renderTweets(tweets) {
 
 $(document).ready(function() {
 
-
   function loadTweets(){
     $.ajax({
         method: 'GET',
@@ -159,17 +177,11 @@ $(document).ready(function() {
     })
   };
 
-
   loadTweets();
 
-
   $('#ind-tweet').on('submit', (ev) => {
-    // prevent default browser form submission
-
-
     ev.preventDefault();
     let theVal = $('#ind-tweet').find("input[type=text], textarea").val();
-    console.log("The Value : " +theVal);
 
     if(theVal === '' || theVal.length > 140){
       alert("Invalid Data!!");
@@ -177,7 +189,6 @@ $(document).ready(function() {
       // read the data from the form inputs
        const data_obj = {};
        $('#ind_tweet').serializeArray().forEach((elm) => {
-        console.log("GOT HERE:", elm.name+'  //  '+elm.value);
          data_obj[elm.name] = elm.value;
        });
       // submit the info -- make POST request via ajax
@@ -187,7 +198,6 @@ $(document).ready(function() {
         data: $('#ind-tweet').serialize()
       })
       .done((result) => {
-        console.log('new post created!', result);
         $('#ind-tweet').find("input[type=text], textarea").val('');
         $('.new-tweet .counter').text('140');
         loadTweets();
@@ -196,10 +206,65 @@ $(document).ready(function() {
     }
   });
 
+
+
+  $('#login1').on('submit', (ev) => {
+    ev.preventDefault();
+
+    var theVal = null;
+    var values = {};
+    $.each($('#login1').serializeArray(), function(i, field) {
+        values[field.name] = field.value;
+     //   alert("Field Name:" + field.name  + '   Field Value' + field.value);
+       // alert("i:" + i + "Field User" + field.user  + '   Field Password' + field.password);
+    });
+    for(key in values){
+      //alert("Values:"+key +' '+values[key]);
+      if( key === 'user'){
+        theVal = values[key];
+        break;
+      }
+    }
+
+    if(theVal === '' || theVal.length > 140){
+      alert("Invalid Data!!");
+    }else{
+      // read the data from the form inputs
+      // const data_obj = {};
+      // $('#login1').serializeArray().forEach((elm) => {
+      //  alert("GOT HERE:"+ elm);
+      //   data_obj[elm.name] = elm.value;
+      // });
+      // submit the info -- make POST request via ajax
+      $.ajax({
+        method: 'POST',
+        url: '/tweets/login',
+        data: $('#login1').serialize()
+      })
+      .done((result) => {
+        //alert('Result:'+ result);
+        //alert('Cookie 2:');
+        $(".login").css("display", "none");
+        $(".container").css("display", "block");
+
+        loadTweets();
+      })
+      .fail(console.error);
+
+    }
+  });
+
+
   $(".button").click(function(){
     $(".new-tweet").slideToggle(500);
     $(".new-tweet textarea").focus();
   });
+
+  if(req.session.user_id){
+    console.log('Halleluja');
+  }else{
+    console.log('Fuck You');
+  }
 
 
 

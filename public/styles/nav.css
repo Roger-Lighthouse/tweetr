@@ -25,10 +25,15 @@
 }
 
 #nav-bar .button {
+  /*width: 150px;
+  height: 80px;
+
+
+  line-height: 70%;*/
   float: right;
-  padding-top: 20px;
-  line-height: 70%;
-  font-size: 2em;
+  font-size: 90%;
   margin: auto;
-  padding:  25px;
+  padding:  30px;
+  padding-bottom: 20px;
+
 }
