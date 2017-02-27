@@ -16,6 +16,7 @@ module.exports = function makeDataHelpers(db) {
      // });
     },
 
+
     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
       //simulateDelay(() => {
@@ -29,7 +30,9 @@ module.exports = function makeDataHelpers(db) {
         }
       });
     },
-//{"user": user, "password": password}
+
+
+    //{"user": user, "password": password}
     findUser: function(user, password, callback) {
       db.collection("login").find({}).toArray((err, users) => {
         if (err) {

@@ -1,3 +1,23 @@
+
+Submission Notes:
+
+1) I tried in vain all weekend to implement the full login features.
+2) I got as far as a login with some issues. The program can be logged in with user>'lighthouse' and
+  password '12345'.
+3) A correct login will make the tweet section visible. A wrong login will keep you on login section. Also, I registered 'lighthouse' user manually in Mongo command line. If this is a problem I can back out the whole login part but I wanted to show something for the hours I put in!
+
+4) I love the AJAX concept but I am not clear about what is being sent back and unpacking it. I will ask on Monday to clear this up.
+
+Sorry for late submission. I was done on Friday and became obbsessed with getting some aspect of login working very frustrating.
+
+
+
+
+
+
+
+
+
 # Tweeter Project
 
 A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain ol' CSS3 to help web bootcamp students get comfortable with their front-end chops with those technologies.

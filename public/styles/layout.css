@@ -15,7 +15,6 @@ html {
  */
 
 
-
 body {
   margin: 0;
   color: #244751;
@@ -28,7 +27,7 @@ body {
  */
 
 .login {
-  height: 200px;
+  height: 100px;
   margin: auto;
   width: 50%;
   border: 3px solid green;
@@ -36,6 +35,7 @@ body {
   background-color: white;
   border: 3px solid green;
   margin-top: 30px;
+  display: block;
 }
 
 
@@ -56,16 +56,15 @@ body {
 }
 
 @media (max-width: 25%){
-.container {
-  height: auto;
-  margin: auto;
-  width: 25%;
-  border: 3px solid green;
-  padding: 10px;
-  background-color: white;
-  border: 3px solid green;
-  margin-top: 30px;
+  .container {
+    height: auto;
+    margin: auto;
+    width: 25%;
+    border: 3px solid green;
+    padding: 10px;
+    background-color: white;
+    border: 3px solid green;
+    margin-top: 30px;
 
-}
-
+  }
 }

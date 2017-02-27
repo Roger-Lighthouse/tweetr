@@ -41,15 +41,10 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-<!--
-      <button><span class="button"><i class="material-icons">brush</i>
-          Compose</span></button>
--->
-
       <span class="button"><button><i class="material-icons">brush</i>
           Compose</button></span>
-
     </nav>
+
 
     <main class="login">
       <form method='POST' action='/tweets/login' id='login1'>
@@ -57,7 +52,6 @@
         <input type='password' name='password'></input>
         <input type='submit' value='Log In'>
       </form><br/>
-      <a href="/register">Register as a New User</a>
     </main>
 
 
@@ -66,31 +60,12 @@
      <section class="new-tweet">
        <h2>Compose Tweet</h2>
        <form method='POST' action="/tweets/" id='ind-tweet'>
-         <textarea name="text" placeholder="What are you humming about?"></textarea>
+         <textarea id='tweet-text' name="text" placeholder="What are you humming about?"></textarea>
          <input type="submit" value="Tweet">
          <span class="counter">140</span>
        </form>
      </section>
      <section class="tweets">
-     <!--
-       <article class='user-tweet'>
-        <header class='header'>
-          <img class="pic" src="https://www.nsb.com/wp-content/uploads/2013/07/Wendel-Clark-HiRes1-1100x400.jpg" ></img>
-          <span class='name'>Wendel Clark</span>
-          <span class='handle'>@leafs</span>
-        </header>
-          <p class='tweet'>This is my tweet</p>
-        <footer class='footer'>
-            <span>10 days ago</span>
-            <span class='icon'>
-              <i class="material-icons">favorite</i>
-              <i class="material-icons">schedule</i>
-              <i class="material-icons">stars</i>
-         </span>
-        </footer>
-      </article>
-      -->
-
      </section>
     </main>
 
